@@ -81,7 +81,7 @@ if dist_cat == "continuous":
         y = dist.pdf(x)
 
     df_plot = pd.DataFrame({"x": x, "density": y})
-    fig = alt.Chart(df_plot).mark_line().encode(x="x", y="density").properties(width=700, height=400)
+    fig = alt.Chart(df_plot).mark_line().encode(x="x", y="density")
 elif dist_cat == "discrete":
     x = np.arange(dist.ppf(0.005), dist.ppf(0.995))
     if cdf_flag:
@@ -90,14 +90,9 @@ elif dist_cat == "discrete":
         y = dist.pmf(x)
 
     df_plot = pd.DataFrame({"x": x, "density": y})
-    fig = (
-        alt.Chart(df_plot)
-        .mark_bar()
-        .encode(alt.X("x", axis=alt.Axis(tickMinStep=1)), alt.Y("density"))
-        .properties(width=700, height=400)
-    )
+    fig = alt.Chart(df_plot).mark_bar().encode(alt.X("x", axis=alt.Axis(tickMinStep=1)), alt.Y("density"))
 
-st.altair_chart(fig, use_container_width=False)
+st.altair_chart(fig, use_container_width=True)
 
 
 scipy_link = f"https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.{dist_name}.html"
