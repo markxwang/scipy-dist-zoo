@@ -113,7 +113,7 @@ df = pd.DataFrame({"x": x, "y": y})
 
 
 st.markdown("## Code Snippet")
-param_str = str(param_dict)[1:-1].replace(":", "=").replace("'", "").replace("= ", "=")
+param_str = str(param_dict)[1:-1].replace(": ", "=").replace("'", "")
 
 st.code(
     f"""from scipy.stats import {dist_name}
