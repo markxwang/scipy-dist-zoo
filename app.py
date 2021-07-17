@@ -97,5 +97,4 @@ st.altair_chart(fig, use_container_width=True)
 
 scipy_link = f"https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.{dist_name}.html"
 
-if st.button(f"🚀{dist_name} doc"):
-    webbrowser.open_new_tab(scipy_link)
+st.markdown(f"[🚀 {dist_name} doc]({scipy_link})")
