@@ -112,5 +112,15 @@ x = gen_x(dist, continous_flag)
 y = gen_y(dist, x, continous_flag, cdf_flag)
 df = pd.DataFrame({"x": x, "y": y})
 
+
+st.markdown("## Code Snippet")
+param_str = str(param_dict)[1:-1].replace(":", "=").replace("'", "").replace("= ", "=")
+
+st.code(
+    f"""from scipy.stats import {dist_name}
+
+rv = {dist_name}({param_str})
+"""
+)
 st.write("## Density Plot")
 st.altair_chart(gen_fig(df, continous_flag), use_container_width=True)
