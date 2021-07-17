@@ -99,7 +99,12 @@ dist = dist(**param_dict)
 
 cdf_flag = st.sidebar.checkbox("CDF")
 
-st.sidebar.info('This app is developed by [Mark (Xin) Wang](mailto:wxgter@gmail.com")')
+st.sidebar.info(
+    """
+    A streamlit app for visualising [`scipy.stats`](https://docs.scipy.org/doc/scipy/reference/stats.html) 
+    univariate distributions, developed by [Mark (Xin) Wang](mailto:wxgter@gmail.com").
+    """
+)
 
 
 x = gen_x(dist, continous_flag)
