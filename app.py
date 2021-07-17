@@ -37,7 +37,7 @@ def ls_params(distribution):
     return p
 
 
-def gen_x(dist, is_continuous, ql=0.005, qr=0.995, n=100):
+def gen_x(dist, is_continuous, ql=0.005, qr=0.995, n=500):
     if is_continuous:
         x = np.linspace(dist.ppf(ql), dist.ppf(qr), n)
     else:
