@@ -70,6 +70,14 @@ def gen_fig(df, is_continuous):
 continuous_dists = get_continuous_dist()
 discrete_dists = get_discrete_dist()
 
+
+st.sidebar.info(
+    """
+    🎈 A streamlit app for visualising [`scipy.stats`](https://docs.scipy.org/doc/scipy/reference/stats.html) 
+    univariate distributions, developed by [Mark (Xin) Wang](mailto:wxgter@gmail.com").
+    """
+)
+
 st.sidebar.write("## Select distribution")
 dist_cat = st.sidebar.radio("", ["continuous", "discrete"])
 continous_flag = dist_cat == "continuous"
@@ -98,13 +106,6 @@ param_dict = {
 dist = dist(**param_dict)
 
 cdf_flag = st.sidebar.checkbox("CDF")
-
-st.sidebar.info(
-    """
-    A streamlit app for visualising [`scipy.stats`](https://docs.scipy.org/doc/scipy/reference/stats.html) 
-    univariate distributions, developed by [Mark (Xin) Wang](mailto:wxgter@gmail.com").
-    """
-)
 
 
 x = gen_x(dist, continous_flag)
