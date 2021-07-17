@@ -3,7 +3,6 @@ import numpy as np
 import streamlit as st
 import scipy.stats as ss
 import altair as alt
-import webbrowser
 
 
 st.set_page_config(page_title="Scipy Stats Distribution Zoo", layout="wide")
