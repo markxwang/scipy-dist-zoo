@@ -20,7 +20,7 @@ def get_discrete_dist():
 
 @st.cache
 def get_dist(distribution):
-    return getattr(ss, dist_name)
+    return getattr(ss, distribution)
 
 
 @st.cache
