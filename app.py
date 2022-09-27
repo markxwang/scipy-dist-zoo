@@ -5,7 +5,7 @@ import scipy.stats as ss
 import altair as alt
 
 
-st.set_page_config(page_title="Scipy Stats Distribution Zoo", layout="wide")
+st.set_page_config(page_title="🚀 Scipy Stats Distribution Zoo", layout="wide")
 
 
 @st.cache
